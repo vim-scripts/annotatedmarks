@@ -1,0 +1,22 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3691
+
+Vim script for enhancing the built-in marks functionality of vim. 
+
+It gives you a chance to associate some meaningful annotation with a particular mark,
+thus decreases the possibility of you getting lost amongst a large amount of codes.
+Also, it keeps track of which marks to use automatically: you don't have specify the
+name of mark. It uses global marks (A-Z) and tries to use an empty mark when possible.
+The first mark you add would be A, next would be B, etc. If all marks are used, it'll
+search for an least used one (provided that you use THIS script for jumping to it) and
+overwrite it.
+The information about marks are persistent so restarting Vim won't affect them.
+
+Usage:
+Pretty straight forward stuff.
+After installation (drop it in $RUNTIME/plugin), <Leader>M will add a new mark. You'll
+be prompted for a comment on this mark.
+:Amarks would list all marks known to this script and let you choose one to jump to.
+
+Configuration:
+g:am_persistent_file. String. Defines the file that this script writes to between vim sessions.
+g:am_use_popup_menu. 1 or 0. If it's 1, popup menu would be used, otherwise, echo would be used. 
